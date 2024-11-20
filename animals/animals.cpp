@@ -2,11 +2,39 @@
 //
 
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    
+class Animal {
+public:
+    virtual void speak() const = 0;
+
+    virtual ~Animal() {}
+};
+
+class Dog : public Animal {
+public:
+    void speak() const override {
+        cout << "Woof! Woof!" << endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void speak() const override {
+        cout << "Meow! Meow!" << endl;
+    }
+};
+
+int main() {
+    Dog Perro1;
+    Cat Gato1;
+
+    Perro1.speak();
+    Gato1.speak();
+
+    return 0;
 }
+
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
 // Depurar programa: F5 o menú Depurar > Iniciar depuración
